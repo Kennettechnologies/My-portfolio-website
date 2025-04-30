@@ -1,0 +1,232 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header Section */
+#header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#header .logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+#header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#header ul li a:hover {
+    color: #ffdd57;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+.header-text span {
+    color: #ffdd57;
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background: #fff;
+}
+
+#about .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-col-1 img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.about-col-2 {
+    flex: 1;
+}
+
+.about-col-2 .sub-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4facfe;
+}
+
+.about-col-2 p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.tab-titles {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tab-links {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #4facfe;
+    border-radius: 5px;
+    color: #4facfe;
+    transition: all 0.3s ease;
+}
+
+.tab-links.active-link {
+    background: #4facfe;
+    color: #fff;
+}
+
+.tab-contents {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.tab-contents ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tab-contents ul li {
+    margin-bottom: 10px;
+}
+
+.tab-contents ul li span {
+    font-weight: bold;
+    color: #4facfe;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background: #f1f1f1;
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-left .sub-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4facfe;
+}
+
+.contact-left p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-left .social-icons a {
+    color: #4facfe;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact-left .social-icons a:hover {
+    color: #00f2fe;
+}
+
+.contact-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-right input,
+.contact-right textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-right button {
+    padding: 10px 20px;
+    background: #4facfe;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-email {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+    color: #00f2fe;
+}
+.contact-right button:hover {
+    background: #00f2fe;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4facfe;
+    color: #fff;
+    margin-top: 20px;
+}
+
+footer i {
+    color: #ffdd57;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tab-titles {
+        justify-content: center;
+    }
+
+    #contact .container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kevin Onyango's portfolio showcasing expertise in web development, cybersecurity, and ethical hacking.">
+    <meta name="keywords" content="Kevin Onyango, web development, cybersecurity, ethical hacking, portfolio">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ce1cfb39a2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images\logo\IMG_20250312_173227_400.jpg" class="logo" alt="Kevin Onyango Logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm <span>KEVIN</span><br><span>ONYANGO</span> from Kenya</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I'm a passionate tech enthusiast with a keen interest in Web Development, Cybersecurity, and Ethical Hacking.</p>
+                    <p>I specialize in crafting interactive, user-friendly websites and designs that bring ideas to life. With a blend of creativity and technical expertise, I strive to deliver impactful digital experiences.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                            <li><span>Graphic Design</span><br>Designing Marketing Materials</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>App Development</span><br>Building Android/IOS apps</li>
+                            <li><span>Security Operations Center (SOC) Analyst</span><br>Monitoring security alerts in real time and responding to security incidents.</li>
+                            <li><span>Penetration Tester</span><br>Conducting authorized hacking to test security.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2025 - Current</span><br>Freelancing</li>
+                            <li><span>2024 - 2025</span><br>Social Media Manager & Graphic Designer at Opti-Plus Limited</li>
+                            <li><span>2027 - 2028</span><br>Internship at NSSF Kenya - IT Support</li>
+                            <li><span>May 2025 - July 2025</span><br>Industrial Training at Kaimosi Friends University.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023 - 2027</span><br>Bachelor's Degree in Information Technology (IT) at Kaimosi Friends University.</li>
+                            <li><span>2017 - 2021</span><br>KCSE at Musanda Secondary School</li>
+                            <li><span>2009 - 2016</span><br>KCPE at Ingusi Primary School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:kevinonyango2047@gmail.com" class="contact-email">kevinonyango2047@gmail.com</a>
+                    </p>
+                    <p><i class="fa-solid fa-phone"></i> 0797369609</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/Kevinonyango20" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/Kevin_havertz10</a>" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com/kennettechnologies" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="10" cols="30" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright © Kevin Onyango. Made with <i class="fas fa-heart"></i> maximum devotion to Web Dev</p>
+        </footer>
+    </section>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyiQ11Q3AO3E-m-fL3YLlbgu74AeVjxGxSSV6vLaqdAb0Smc_eTJLNALu3vODQQjCU1rA/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully!";
+                    setTimeout(() => {
+                        msg.innerHTML = "";
+                    }, 5000);
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+        
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+    </script>
+</body>
+</html>
