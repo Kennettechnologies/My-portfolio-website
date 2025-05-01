@@ -13,53 +13,6 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Default Dark Mode */
-body {
-    background-color: #121212;
-    color: #ffffff;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Light Mode */
-body.light-mode {
-    background-color: #ffffff;
-    color: #121212;
-}
-
-/* Style for the Toggle Button */
-#theme-toggle {
-    background-color: #ffffff;
-    color: #121212;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-body.light-mode #theme-toggle {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-/* Position the toggle button in the upper-right corner */
-#theme-toggle-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-#theme-toggle {
-    width: 40px; 
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-#theme-toggle:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
 /* Header Section */
 #header {
     background: linear-gradient(to right, #4facfe, #00f2fe);
