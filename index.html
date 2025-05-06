@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kevin Onyango's portfolio showcasing expertise in web development, cybersecurity, and ethical hacking.">
     <meta name="keywords" content="Kevin Onyango, web development, cybersecurity, ethical hacking, portfolio">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kevin Onyango - Web Developer & Cybersecurity Expert">
+    <meta property="og:description" content="Portfolio showcasing expertise in web development, cybersecurity, and ethical hacking.">
+    <meta property="og:image" content="https://my-portfolio-website-liart-ten.vercel.app/images/logo/IMG_20250312_173227_400.jpg">
+    <meta property="og:url" content="https://my-portfolio-website-liart-ten.vercel.app">
+    <meta property="og:type" content="website">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/ce1cfb39a2.js" crossorigin="anonymous"></script>
@@ -89,9 +101,10 @@
                     <p><i class="fa-solid fa-phone"></i> 0797369609</p>
                     <div class="social-icons">
                         <a href="https://www.facebook.com/Kevinonyango20" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://x.com/Kevin_havertz10</a>" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://x.com/Kevin_havertz10" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://instagram.com/kennettechnologies" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/kevin-onyango" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Kennettechnologies" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                     <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
                 </div>
@@ -131,18 +144,40 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyiQ11Q3AO3E-m-fL3YLlbgu74AeVjxGxSSV6vLaqdAb0Smc_eTJLNALu3vODQQjCU1rA/exec';
         const form = document.forms['submit-to-google-sheet'];
         const msg = document.getElementById("msg");
+        const submitBtn = form.querySelector('button[type="submit"]');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending...';
+            
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
                     msg.innerHTML = "Message Sent Successfully!";
+                    msg.style.color = "green";
                     setTimeout(() => {
                         msg.innerHTML = "";
                     }, 5000);
                     form.reset();
                 })
-                .catch(error => console.error('Error!', error.message));
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    msg.innerHTML = "Error sending message. Please try again later.";
+                    msg.style.color = "red";
+                    setTimeout(() => {
+                        msg.innerHTML = "";
+                    }, 5000);
+                })
+                .finally(() => {
+                    // Re-enable submit button and restore original text
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submit';
+                });
         });
     </script>    
     <!-- Link to the external JavaScript file -->

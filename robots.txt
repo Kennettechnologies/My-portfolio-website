@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /images/
+Sitemap: https://my-portfolio-website-liart-ten.vercel.app/sitemap.xml 
